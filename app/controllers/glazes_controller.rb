@@ -6,7 +6,7 @@ def index
 end
 
 def create 
-    glaze = Message.create(glaze_params)
+    glaze = Glaze.create(glaze_params)
     if glaze.valid?
         render json: glaze
     else
@@ -15,7 +15,7 @@ def create
 end
 
 def show
-    glaze = Message.find_by({id: params[:id]})
+    glaze = Glaze.find_by({id: params[:id]})
     # if message
         render json: glaze.to_json
     # else
@@ -26,7 +26,7 @@ end
 private
 
     def glaze_params
-        params.require(:message).permit(:name, :email, :glaze)
+        params.require(:glaze).permit(:name, :code, :glaze)
     end
 
 end
