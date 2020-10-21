@@ -1,0 +1,2 @@
+class Glaze < ApplicationRecord
+end
