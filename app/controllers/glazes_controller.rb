@@ -1,7 +1,7 @@
 class GlazesController < ApplicationController
 
 def index
-    glazes = Message.all
+    glazes = Glaze.all
     render json: glazes.to_json
 end
 
